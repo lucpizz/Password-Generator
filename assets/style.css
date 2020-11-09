@@ -152,8 +152,18 @@ button[disabled] {
   top: -1px;
 }
 
-.div {
+.form-input {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-gap: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.h2-center {
+  align-content: center;
 }
