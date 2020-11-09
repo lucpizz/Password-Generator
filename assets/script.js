@@ -5,10 +5,16 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  var charsCharacters = " !#$%^&*()_+=<>?,.~`'";
+  var numbersRange = "";
+  var characters = " !#$%^&*()_+=<>?,.~`'";
   var lowCase = "abcdefghijklmnopqrstuvwxyz"
   var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var numNumbers = "0123456789";
+  var numbers = "0123456789";
+
+  const char = document.getElementById('characters');
+  const lCase = document.getElementById('lowCaseLetters');
+  const uCase = document.getElementById('upperCaseLetters');
+  const num = document.getElementById('numbers');
 
   passwordText.value = password;
 
