@@ -1,7 +1,6 @@
 // Assignment Code
 var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !@#$%^&*\(\)_-=+\<\>?;:\"\'\'\{\}\[\]";
 
-
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -28,14 +27,27 @@ for (var i = 0; i<chosenLength; i++ ) {
 
   console.log(chosenLength);
 
-  pword += characters.charAt(Math.floor(Math.random() * characters.length)+1);
+  pword += characters.charAt(Math.floor(Math.random() * characters.length));
 
   
 }
+  console.log(pword);
+
   return pword;
+
+ 
 
 }
 
+function copyToClipboard() {
 
+var copyText = document.getElementById("password");
+
+copyText.select();
+copyText.setSelectionRange(0, 99999)
+document.execCommand("copy");
+alert("Copied the text: " + copyText.value);
+
+}
 
 
