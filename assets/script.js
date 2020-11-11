@@ -1,7 +1,7 @@
 // Assignment Code
 var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !@#$%^&*\(\)_-=+\<\>?;:\"\'\'\{\}\[\]";
 
-var chosenLength = document.querySelector("#charRange").value;
+var chosenLength = document.querySelector("#number").value="#number";
 
 var generateBtn = document.querySelector("#generate");
 
@@ -19,7 +19,7 @@ function generatePassword() {
   var pword = "";
 
 
-for (var i = 0; i<chosenLength; i++ ) {
+for (var i = 1; i<chosenLength.length; i++ ) {
 
   pword += characters.charAt(Math.floor(Math.random() * characters.length));
 }
