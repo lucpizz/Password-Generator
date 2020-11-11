@@ -13,43 +13,18 @@
   <div class="wrapper">
     <header>
       <h1>Password Generator</h1>
-
-      
-
     </header>
     <div class="card">
-      <div class="card-header">
-        <h2 class="h2-center">Generate a Password</h2>
+      <h2 class="h2-center">Generate a Password</h2>
     
-        <form class="form-input">
+      <form class="form-input">
+      
         
-          
-            <label for="numbersRange">Numbers</label>
-            <input type="number" id="numbersRange" min="8" max="32" placeholder="8">
+          <label for="charRange">Password size range from minimal 8 to maximum 32 characters:</label>
+          <input type="number" id="charRange" min="8" max="32" placeholder="8">
 
-  
+     </form>
 
-            <label id="label" for="lowerCase">Lower Case Letters</label>
-            <input type="checkbox" id="lowCaseLetters" name="lowCaseLetters" value="abcdefghijklmnopqrstuvwxyz">
-            
-
-            <label for="upperCase">Upper Case Letters</label>
-            <input type="checkbox" id="upperCaseLetters" name="upperCaseLetters" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ">
-
-            
-
-            <label for="numbers">Numbers</label>
-            <input type="checkbox" id="numbers" name="numbers" value="0123456789">
-
-            
-
-            <label for="Characters">Characters</label>
-            <input type="checkbox" id="characters" name="characters" value=" !#$%^&*()_+=?,.'~">
-
-
-       </form>
-
-      </div>
       <div class="card-body">
         <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
       </div>
