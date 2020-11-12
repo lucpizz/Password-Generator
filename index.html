@@ -1,43 +1,80 @@
 <!DOCTYPE html>
+
+<!-- Sets the webpage language -->
 <html lang="en">
+
+
+<!-- Header -->
+<!-- sets the character set standard -->
+<!-- sets the device screen size flexibility-->
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Password Generator</title>
+
+  <!-- sets the location of the CSS style sheet used for the webpage -->
+
   <link rel="stylesheet" href="./assets/style.css" />
+
+  <!-- sets titlee of the webpage -->
+
+  <title>Password Generator</title>
+  
 </head>
 
+<!-- body of the webapge -->
+
 <body>
+
+  <!-- sets the margin spacing from the top and has the header-->
   <div class="wrapper">
+
     <header>
       <h1>Password Generator</h1>
     </header>
+
+    <!-- creates the card style view on the webpage and sets heading to generate a passsword -->
     <div class="card">
+
       <h2 class="h2-center">Generate a Password</h2>
+
+          <!-- creates a form to set both password size and to add symbols checkbox to add complexity to password-->
     
-      <form class="form-input">
-      
-        
-          <label for="charRange">Password size range from minimal 8 to maximum 32 characters:</label>
-          <input type="number" id="number" min="8" max="32" placeholder="8" value="8">
+          <form class="form-input" aria-label="input size and/or check box to add characters">
+          
+            
+              <label for="charRange">Password size range from minimal 8 to maximum 32 characters:</label>
+              <input type="number" id="number" min="8" max="32" placeholder="8" value="8">
 
-          <label for="symbols">Characters</label>
-            <input type="checkbox" id="symbols" name="symbols" value="! @#$%^&*()-_=+,./;:\'">
+              <label for="symbols">Characters</label>
+                <input type="checkbox" id="symbols" name="symbols" value="! @#$%^&*()-_=+,./;:\'" value="false">
 
-     </form>
+        </form>
 
-      <div class="card-body">
-        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-      </div>
-      <div class="card-footer">
-        <button id="generate" class="btn">Generate Password</button>
-        <button class="btn" onclick="copyToClipboard()">Copy Password</button>
-      </div>
+        <!-- creates the text box area where the password is generated-->
+        <div class="card-body">
+
+          <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+
+        </div>
+
+        <!-- creates card footeer adding two buttons, 1. to generate password, 2. to copy password to computer clipboard -->
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+          <button class="btn" onclick="copyToClipboard()">Copy Password</button>
+        </div>
+
     </div>
+
+  
   </div>
+
+  <!-- sets the JavaScript file location used to generate the password -->
+
   <script src="./assets/script.js"></script>
+
+
 </body>
 
 </html>
