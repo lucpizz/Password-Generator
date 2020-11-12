@@ -27,7 +27,7 @@ body {
   font-weight: bolder;
   background-color: #f9fbfd;
   background-size: cover;
-  background-image: url("/images/pexels-jessica-lewis-583848.jpg");
+  background-image: url("../images/pexels-jessica-lewis-583848.jpg");
 }
 
 .wrapper {
