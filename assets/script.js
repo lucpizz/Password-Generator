@@ -13,6 +13,7 @@ var symbols = document.getElementById("symbols").checked;
 // Write password to the #password input
 
 function writePassword() {
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -35,7 +36,7 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
 
   var pword = "";
-  var chosenLength = document.getElementById("number").value;
+  var chosenLength = document.getElementById("charLength").value;
 
 
           
@@ -50,8 +51,6 @@ function generatePassword() {
   console.log(pword);
 
   return pword;
-
- 
 
 }
 
