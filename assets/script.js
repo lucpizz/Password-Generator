@@ -1,5 +1,6 @@
 // Assignment Code
-var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 !@#$%^&*\(\)_-=+\<\>?;:\"\'\'\{\}\[\]";
+var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+var symbols = "! @#$%^&*\(\)_-=+\<\>?;:\"\'\'\{\}\[\]";
 
 var generateBtn = document.querySelector("#generate");
 
@@ -21,6 +22,7 @@ function generatePassword() {
 
   var pword = "";
   var chosenLength = document.getElementById("number").value;
+  var symbols = document.getElementById("symbols").checked = true;
 
   
 for (var i = 0; i<chosenLength; i++ ) {
@@ -38,6 +40,8 @@ for (var i = 0; i<chosenLength; i++ ) {
  
 
 }
+
+//adds copy to clipboard function to the "Copy Password" button
 
 function copyToClipboard() {
 
