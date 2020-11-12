@@ -2,7 +2,7 @@
 
 var characters =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-var symbols_array = "! @#$%^&*()_-=+<>?;:\"''{}[]";
+var symbols_array = "!@#$%^&*()_-=+<>?;:\"''{}[]";
 
 // Variables used to get input from the password generator webpage
 
@@ -23,36 +23,38 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 /* Function to generate the password
-    - variable pword to store created password
-    - variable chosenLength to store user selected password size
+    - variable "pword" to store created password with letters and numbers
+    - variable "chosenLength" to store user selected password size
+    - variable "pwordSymbols" to store user created password with symbols
     - for loop to generate the password upon the user length selected
+    - if / else statements to create password with letters and number
+      * if / else statements to create password with letters, numbers, and symbols
+        - Note: symbols generated at a lower frequency than letters/numbers
     - return the password once generated
 */
 
 function generatePassword() {
   var pword = "";
+  var pwordSymbols = "";
   var chosenLength = document.getElementById("charLength").value;
-  console.log(symbols.checked);
 
   for (var i = 0; i < chosenLength; i++) {
-    console.log(chosenLength);
     if (symbols.checked) {
-      let chosen_array = Math.round(Math.random() * 1);
-      if (chosen_array == 1) {
+      var pwordSymbols = Math.round(Math.random() * 10);
+
+      if (pwordSymbols > 1) {
         pword += characters.charAt(
           Math.floor(Math.random() * characters.length)
         );
       } else {
-        pword += symbols_array.charAt(
-          Math.floor(Math.random() * symbols_array.length)
+        pword += pwordSymbols.charAt(
+          Math.floor(Math.random() * pwordSymbols.length)
         );
       }
     } else {
       pword += characters.charAt(Math.floor(Math.random() * characters.length));
     }
   }
-
-  console.log(pword);
 
   return pword;
 }
@@ -70,5 +72,5 @@ function copyToClipboard() {
   copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");
 
-  alert("Copied the text: " + copyText.value);
+  alert("Your new password was copied!");
 }
