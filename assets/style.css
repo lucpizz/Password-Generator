@@ -27,7 +27,7 @@ body {
   font-weight: bolder;
   background-color: #f9fbfd;
   background-size: cover;
-  background-image: url("/images/pexels-jessica-lewis-583848.jpg")
+  background-image: url("../images/pexels-jessica-lewis-583848.jpg");
 }
 
 .wrapper {
@@ -41,7 +41,6 @@ header {
   padding: 20px;
   padding-top: 0px;
   color: hsl(210, 29%, 97%);
-  
 }
 
 /*  
@@ -96,7 +95,7 @@ header {
 
 .form-input {
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
   display: grid;
   grid-template-columns: auto auto;
   row-gap: 1rem;
@@ -122,7 +121,8 @@ header {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+    0px;
   color: hsl(0, 0%, 100%);
   display: inline-block;
   font-size: 22px;
@@ -186,7 +186,6 @@ button[disabled] {
   }
 }
 
-
 .label {
   display: block;
   padding-left: 15px;
@@ -202,5 +201,3 @@ button[disabled] {
   position: relative;
   top: -1px;
 }
-
-
