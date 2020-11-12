@@ -29,7 +29,7 @@ generateBtn.addEventListener("click", writePassword);
     - for loop to generate the password upon the user length selected
     - if / else statements to create password with letters and number
       * if / else statements to create password with letters, numbers, and symbols
-        - Note: symbols generated at a lower frequency than letters/numbers
+        - Note: symbols generated at a frequency of 1 per 10 letters/numbers
     - return the password once generated
 */
 
@@ -47,8 +47,8 @@ function generatePassword() {
           Math.floor(Math.random() * characters.length)
         );
       } else {
-        pword += pwordSymbols.charAt(
-          Math.floor(Math.random() * pwordSymbols.length)
+        pword += symbols_array.charAt(
+          Math.floor(Math.random() * symbols_array.length)
         );
       }
     } else {
