@@ -73,7 +73,7 @@ function generatePassword() {
   }
    if (!c_lowerCase && !c_upperCase && !c_numbers && !c_symbols) {
     alert(
-      "Please check any of the checkboxes to recreate your desired password!"
+      "Please check any of the boxes to create your desired password!"
     );
   
     location.reload();
