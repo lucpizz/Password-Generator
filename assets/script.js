@@ -3,12 +3,18 @@
 var characters =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 var symbols_array = "!@#$%^&*()_-=+<>?;:\"''{}[]";
+var numbers = "0123456789";
+var lowerCase = "abcdefghijklnmopqrstuvxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 // Variables used to get input from the password generator webpage
 
 var generateBtn = document.querySelector("#generate");
 var copyPasswordBtn = document.querySelector("#copyPassword");
 var symbols = document.getElementById("symbols");
+var numbers = document.getElementById("numbers");
+var upperCase = document.getElementById("upperCase");
+var lowerCase = document.getElementById("lowerCase");
 
 /*  Function to excute generate password function()
     - set variable "password" to generatePassword function
@@ -46,7 +52,7 @@ function generatePassword() {
 
   for (var i = 0; i < chosenLength; i++) {
     if (symbols.checked) {
-      var pwordSymbols = Math.round(Math.random() * 8);
+      var pwordSymbols = Math.round(Math.random() * 5);
 
       if (pwordSymbols > 1) {
         pword += characters.charAt(
