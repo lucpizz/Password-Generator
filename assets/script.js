@@ -83,11 +83,11 @@ function generatePassword() {
 
     console.log(symbols);
   }
-  if (c_lowerCase && c_upperCase && c_numbers && c_symbols != checked) {
+  if (!c_lowerCase && !c_upperCase && !c_numbers && !c_symbol) {
     alert(
       "Please check any of the checkboxes to recreate your desired password!"
     );
-    location.reload();
+    //location.reload();
   }
 
   for (var i = 0; i < chosenLength; i++) {
