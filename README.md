@@ -1,5 +1,3 @@
-# **Under Contruction**
-
 # Password-Generator
 
 HTML, CCS, and JavaScript: Password Generator
@@ -7,9 +5,12 @@ HTML, CCS, and JavaScript: Password Generator
 This project is using HTML, CSS, and JavaScript to create a password generating program.
 
     - Most website authentication mechanisms require both alpha (upper or lower case) and numeric characters
-    - Provided the option to add symbols (!@#$%^&*()_-=+<>?;:\"''{}[])
+    - Provided the options for lowerCase and upperCase letters, numbers, and specail characters
     - Provided the option to enter password length (range 8 to 128 characters)
     - Buttons to both generate password and/or copy new password to computer clipboard
+
+The program works by selecting your pasword length and checking the boxes for your password complexity.  If no 
+boxes are checked, then program will not generate a password.
 
 ---
 
