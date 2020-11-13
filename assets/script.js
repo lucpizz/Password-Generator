@@ -2,7 +2,7 @@
 
 var characters =
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-var symbols_array = "!@#$%^&*()_-=+<>?;:\"''{}[]";
+var specialChar = "!@#$%^&*()_-=+<>?;:\"''{}[]";
 var numbers = "0123456789";
 var lowerCase = "abcdefghijklnmopqrstuvxyz";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -51,25 +51,37 @@ function generatePassword() {
   var chosenLength = document.getElementById("charLength").value;
 
   for (var i = 0; i < chosenLength; i++) {
-    if (symbols.checked) {
-      var pwordSymbols = Math.round(Math.random() * 5);
-
-      if (pwordSymbols > 1) {
-        pword += characters.charAt(
-          Math.floor(Math.random() * characters.length)
-        );
-      } else {
-        pword += symbols_array.charAt(
-          Math.floor(Math.random() * symbols_array.length)
-        );
-      }
-    } else {
-      pword += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
+    
+    var p = 
   }
 
   return pword;
 }
+
+
+function getUpperCase() {
+  return upperCase[Math.floor(Math.random() * upperCase.length)];
+}
+
+console.log(getUpperCase());
+
+function getLowerCase() {
+  return lowerCase[Math.floor(Math.random() * lowerCase.length)];
+}
+
+console.log(getLowerCase());
+
+function getNumber() {
+  return numbers[Math.floor(Math.random() * numbers.length)];
+}
+
+console.log(getNumber());
+
+function getSpecailChar() {
+  return specialChar[Math.floor(Math.random() * specialChar.length)];
+}
+
+console.log(getSpecailChar());
 
 /* Function to add copy password to computer clipboard
   - variable get user click input from password generator webpage
@@ -86,3 +98,35 @@ function copyToClipboard() {
 
   alert("Your new password was copied!");
 }
+
+
+
+/*
+function generatePassword() {
+  var pword = "";
+  var pwordSymbols = "";
+  var chosenLength = document.getElementById("charLength").value;
+
+  for (var i = 0; i < chosenLength; i++) {
+    if (symbols.checked) {
+      var pwordSymbols = Math.round(Math.random() * 5);
+
+      if (pwordSymbols > 1) {
+        pword += characters.charAt(
+          Math.floor(Math.random() * characters.length)
+        );
+      } else {
+        pword += specialChar.charAt(
+          Math.floor(Math.random() * specialChar.length)
+        );
+      }
+    } else {
+      pword += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+  }
+
+  return pword;
+}
+
+
+*/
