@@ -33,4 +33,4 @@ This project is using HTML, CSS, and JavaScript to create a password generating 
 
 ## Image of the Webpage
 
-![Screenshot of Password Generator webpage](../images/GeneratePassword.png)
+![Screenshot of Password Generator webpage](/images/GeneratePassword.png)
