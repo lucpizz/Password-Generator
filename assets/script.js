@@ -1,20 +1,20 @@
 // Variables to store the characters used to generate the password
 
-var characters =
-  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-var specialChar = "!@#$%^&*()_-=+<>?;:\"''{}[]";
-var numbers = "0123456789";
-var lowerCase = "abcdefghijklnmopqrstuvxyz";
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+//var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+//var specialChar = "!@#$%^&*()_-=+<>?;:\"''{}[]";
+//var numbers = "0123456789";
+//var lowerCase = "abcdefghijklnmopqrstuvxyz";
+//var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 // Variables used to get input from the password generator webpage
 
 var generateBtn = document.querySelector("#generate");
 var copyPasswordBtn = document.querySelector("#copyPassword");
-var symbols = document.getElementById("symbols");
-var numbers = document.getElementById("numbers");
-var upperCase = document.getElementById("upperCase");
-var lowerCase = document.getElementById("lowerCase");
+var chosenLength = document.getElementById("charLength").value;
+var symbols = document.getElementById("symbols").checked;
+var numbers = document.getElementById("numbers").checked;
+var upperCase = document.getElementById("upperCase").checked;
+var lowerCase = document.getElementById("lowerCase").checked;
 
 /*  Function to excute generate password function()
     - set variable "password" to generatePassword function
@@ -45,46 +45,50 @@ copyPasswordBtn.addEventListener("click", copyToClipboard);
     - return the password once generated
 */
 
-let pwd = [lowerCase, upperCase, numbers, specialChar];
-
+//let pwd = [lowerCase, upperCase, numbers, specialChar];
 
 function generatePassword() {
   var pword = "";
-  var pwordSymbols = "";
+  var password = "";
+
+  var symbols = "!@#$%^&*()_-=+<>?;:\"''{}[]";
+  var numbers = "0123456789";
+  var lowerCase = "abcdefghijklnmopqrstuvxyz";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
   var chosenLength = document.getElementById("charLength").value;
 
-  for (var i = 0; i < chosenLength; i++) {
-    
-    var p = 
+  switch (true) {
+    case document.getElementById("lowerCase").checked:
+      pword = pword + lowerCase;
+      console.log(lowerCase);
+
+    case document.getElementById("upperCase").checked:
+      pword = pword + upperCase;
+
+    case document.getElementById("numbers").checked:
+      pword = pword + numbers;
+
+    case document.getElementById("symbols").checked:
+      pword = pword + symbols;
+      break;
+    default:
+      alert(
+        "Please check any of the checkboxes to recreate your desired password!"
+      );
+      location.reload();
   }
 
-  return pword;
+  for (var i = 0; i < chosenLength; i++) {
+    var gen_random = Math.floor(Math.random() * pword.length);
+
+    console.log(gen_random);
+
+    password += pword[gen_random];
+  }
+
+  return password;
 }
-
-
-function getUpperCase() {
-  return upperCase[Math.floor(Math.random() * upperCase.length)];
-}
-
-console.log(getUpperCase());
-
-function getLowerCase() {
-  return lowerCase[Math.floor(Math.random() * lowerCase.length)];
-}
-
-console.log(getLowerCase());
-
-function getNumber() {
-  return numbers[Math.floor(Math.random() * numbers.length)];
-}
-
-console.log(getNumber());
-
-function getSpecailChar() {
-  return specialChar[Math.floor(Math.random() * specialChar.length)];
-}
-
-console.log(getSpecailChar());
 
 /* Function to add copy password to computer clipboard
   - variable get user click input from password generator webpage
@@ -101,8 +105,6 @@ function copyToClipboard() {
 
   alert("Your new password was copied!");
 }
-
-
 
 /*
 function generatePassword() {
@@ -131,5 +133,55 @@ function generatePassword() {
   return pword;
 }
 
+function getUpperCase() {
+  return upperCase[Math.floor(Math.random() * upperCase.length)];
+}
+
+console.log(getUpperCase());
+
+function getLowerCase() {
+  return lowerCase[Math.floor(Math.random() * lowerCase.length)];
+}
+
+console.log(getLowerCase());
+
+function getNumber() {
+  return numbers[Math.floor(Math.random() * numbers.length)];
+}
+
+console.log(getNumber());
+
+function getSpecailChar() {
+  return specialChar[Math.floor(Math.random() * specialChar.length)];
+}
+
+console.log(getSpecailChar());
+
+
+
+------------
+
+if (document.getElementById("lowerCase").checked) {
+    pword = pword + lowerCase;
+
+    console.log(lowerCase);
+  } else if (document.getElementById("upperCase").checked) {
+    pword = pword + upperCase;
+
+    console.log(upperCase);
+  } else if (document.getElementById("numbers").checked) {
+    pword = pword + numbers;
+
+    console.log(numbers);
+  } else if (document.getElementById("symbols").checked) {
+    pword = pword + symbols;
+
+    console.log(symbols);
+  } else {
+    alert(
+      "Please check any of the checkboxes to recreate your desired password!"
+    );
+    location.reload();
+  }
 
 */
