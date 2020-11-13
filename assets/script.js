@@ -40,7 +40,7 @@ function generatePassword() {
 
   for (var i = 0; i < chosenLength; i++) {
     if (symbols.checked) {
-      var pwordSymbols = Math.round(Math.random() * 5);
+      var pwordSymbols = Math.round(Math.random() * 8);
 
       if (pwordSymbols > 1) {
         pword += characters.charAt(
