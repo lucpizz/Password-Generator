@@ -7,9 +7,14 @@ var symbols_array = "!@#$%^&*()_-=+<>?;:\"''{}[]";
 // Variables used to get input from the password generator webpage
 
 var generateBtn = document.querySelector("#generate");
+var copyPasswordBtn = document.querySelector("#copyPassword");
 var symbols = document.getElementById("symbols");
 
-// Write password to the #password input
+/*  Function to excute generate password function()
+    - set variable "password" to generatePassword function
+    - set variable "passwordText" to the document querySelector for the password button
+    - pass the password to the "passwordText.value"
+*/
 
 function writePassword() {
   var password = generatePassword();
@@ -18,9 +23,10 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// Add event listener to capture button clicks to execute functions
 
 generateBtn.addEventListener("click", writePassword);
+copyPasswordBtn.addEventListener("click", copyToClipboard);
 
 /* Function to generate the password
     - variable "pword" to store created password with letters and numbers
