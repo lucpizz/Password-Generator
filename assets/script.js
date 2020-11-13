@@ -56,27 +56,38 @@ function generatePassword() {
   var lowerCase = "abcdefghijklnmopqrstuvxyz";
   var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+  var c_symbols = document.getElementById("symbols").checked;
+  var c_numbers = document.getElementById("numbers").checked;
+  var c_upperCase = document.getElementById("upperCase").checked;
+  var c_lowerCase = document.getElementById("lowerCase").checked;
+
   var chosenLength = document.getElementById("charLength").value;
 
-  switch (true) {
-    case document.getElementById("lowerCase").checked:
-      pword = pword + lowerCase;
-      console.log(lowerCase);
+  if (document.getElementById("lowerCase").checked) {
+    pword = pword + lowerCase;
 
-    case document.getElementById("upperCase").checked:
-      pword = pword + upperCase;
+    console.log(lowerCase);
+  }
+  if (document.getElementById("upperCase").checked) {
+    pword = pword + upperCase;
 
-    case document.getElementById("numbers").checked:
-      pword = pword + numbers;
+    console.log(upperCase);
+  }
+  if (document.getElementById("numbers").checked) {
+    pword = pword + numbers;
 
-    case document.getElementById("symbols").checked:
-      pword = pword + symbols;
-      break;
-    default:
-      alert(
-        "Please check any of the checkboxes to recreate your desired password!"
-      );
-      location.reload();
+    console.log(numbers);
+  }
+  if (document.getElementById("symbols").checked) {
+    pword = pword + symbols;
+
+    console.log(symbols);
+  }
+  if (c_lowerCase && c_upperCase && c_numbers && c_symbols != checked) {
+    alert(
+      "Please check any of the checkboxes to recreate your desired password!"
+    );
+    location.reload();
   }
 
   for (var i = 0; i < chosenLength; i++) {
@@ -105,83 +116,3 @@ function copyToClipboard() {
 
   alert("Your new password was copied!");
 }
-
-/*
-function generatePassword() {
-  var pword = "";
-  var pwordSymbols = "";
-  var chosenLength = document.getElementById("charLength").value;
-
-  for (var i = 0; i < chosenLength; i++) {
-    if (symbols.checked) {
-      var pwordSymbols = Math.round(Math.random() * 5);
-
-      if (pwordSymbols > 1) {
-        pword += characters.charAt(
-          Math.floor(Math.random() * characters.length)
-        );
-      } else {
-        pword += specialChar.charAt(
-          Math.floor(Math.random() * specialChar.length)
-        );
-      }
-    } else {
-      pword += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-  }
-
-  return pword;
-}
-
-function getUpperCase() {
-  return upperCase[Math.floor(Math.random() * upperCase.length)];
-}
-
-console.log(getUpperCase());
-
-function getLowerCase() {
-  return lowerCase[Math.floor(Math.random() * lowerCase.length)];
-}
-
-console.log(getLowerCase());
-
-function getNumber() {
-  return numbers[Math.floor(Math.random() * numbers.length)];
-}
-
-console.log(getNumber());
-
-function getSpecailChar() {
-  return specialChar[Math.floor(Math.random() * specialChar.length)];
-}
-
-console.log(getSpecailChar());
-
-
-
-------------
-
-if (document.getElementById("lowerCase").checked) {
-    pword = pword + lowerCase;
-
-    console.log(lowerCase);
-  } else if (document.getElementById("upperCase").checked) {
-    pword = pword + upperCase;
-
-    console.log(upperCase);
-  } else if (document.getElementById("numbers").checked) {
-    pword = pword + numbers;
-
-    console.log(numbers);
-  } else if (document.getElementById("symbols").checked) {
-    pword = pword + symbols;
-
-    console.log(symbols);
-  } else {
-    alert(
-      "Please check any of the checkboxes to recreate your desired password!"
-    );
-    location.reload();
-  }
-
-*/
