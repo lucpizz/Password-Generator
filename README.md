@@ -6,12 +6,13 @@ This project is using HTML, CSS, and JavaScript to create a password generating 
 
     - Most website authentication mechanisms require both alpha (upper or lower case)
       and numeric characters
+    - The program uses checkbox versus browser pop-ups for easy of use and simplified UX
     - Provided the option to enter password length (range 8 to 128 characters)
-    - Provided the options for lowerCase and upperCase letters, numbers, and special
+    - Provided the options for lowercase and uppercase letters, numbers, and special
       characters
     - Buttons to both generate password and/or copy new password to computer clipboard
 
-The program works by selecting your pasword length and checking the boxes for your desired password complexity.  If no 
+The program works by selecting your password length and checking the boxes for your desired password complexity.  If no 
 boxes are checked, then the program will not generate a password.
 
 ---
