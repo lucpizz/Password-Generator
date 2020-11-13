@@ -88,7 +88,7 @@ function generatePassword() {
   return password;
 }
 
-/* Function to add copy password to computer clipboard
+/* Function to add copy password feature to computer clipboard
   - variable to get user click input from password generator webpage
   - adds copy to clipboard function to the "Copy Password" button
   - sends an alert to the browser to notify user password was copied
