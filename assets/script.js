@@ -45,6 +45,9 @@ copyPasswordBtn.addEventListener("click", copyToClipboard);
     - return the password once generated
 */
 
+let pwd = [lowerCase, upperCase, numbers, specialChar];
+
+
 function generatePassword() {
   var pword = "";
   var pwordSymbols = "";
