@@ -82,14 +82,12 @@ function generatePassword() {
     pword = pword + symbols;
 
     console.log(symbols);
-  }
-  if (c_lowerCase && c_upperCase && c_numbers && c_symbols != checked) {
+  } else {
     alert(
       "Please check any of the checkboxes to recreate your desired password!"
     );
     location.reload();
   }
-
   for (var i = 0; i < chosenLength; i++) {
     var gen_random = Math.floor(Math.random() * pword.length);
 
