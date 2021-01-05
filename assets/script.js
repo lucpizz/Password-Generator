@@ -1,11 +1,3 @@
-// Variables to store the characters used to generate the password
-
-//var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-//var specialChar = "!@#$%^&*()_-=+<>?;:\"''{}[]";
-//var numbers = "0123456789";
-//var lowerCase = "abcdefghijklnmopqrstuvxyz";
-//var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
 // Variables used to get input from the password generator webpage
 
 var generateBtn = document.querySelector("#generate");
@@ -29,23 +21,23 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to capture button clicks to execute functions
+// Add event listeners to capture button clicks to execute functions
 
 generateBtn.addEventListener("click", writePassword);
 copyPasswordBtn.addEventListener("click", copyToClipboard);
 
 /* Function to generate the password
+    - variables to store the characters used to generate the password
+    - variable "password" set to null until generated at the end of the program
     - variable "pword" to store created password with letters and numbers
     - variable "chosenLength" to store user selected password size
     - variable "pwordSymbols" to store user created password with symbols
+    - if statements to create password with letters and number
+    - last if statment sends the alert if no boxes are checked and reloads the page
     - for loop to generate the password upon the user length selected
-    - if / else statements to create password with letters and number
-      * if / else statements to create password with letters, numbers, and symbols
-        - Note: symbols generated at a frequency of 1 per 10 letters/numbers
+    - pword[] array to store generate "random" password wihin the for loop
     - return the password once generated
 */
-
-//let pwd = [lowerCase, upperCase, numbers, specialChar];
 
 function generatePassword() {
   var pword = "";
@@ -66,32 +58,33 @@ function generatePassword() {
   if (document.getElementById("lowerCase").checked) {
     pword = pword + lowerCase;
 
-    console.log(lowerCase);
   }
   if (document.getElementById("upperCase").checked) {
     pword = pword + upperCase;
 
-    console.log(upperCase);
   }
   if (document.getElementById("numbers").checked) {
     pword = pword + numbers;
 
-    console.log(numbers);
   }
   if (document.getElementById("symbols").checked) {
     pword = pword + symbols;
 
+<<<<<<< HEAD
     console.log(symbols);
   } else {
+=======
+  }
+   if (!c_lowerCase && !c_upperCase && !c_numbers && !c_symbols) {
+>>>>>>> c324ed5cfcda448b5ede93fa476fc25851413afa
     alert(
-      "Please check any of the checkboxes to recreate your desired password!"
+      "Please check any of the boxes to create your desired password!"
     );
+  
     location.reload();
   }
   for (var i = 0; i < chosenLength; i++) {
     var gen_random = Math.floor(Math.random() * pword.length);
-
-    console.log(gen_random);
 
     password += pword[gen_random];
   }
@@ -99,8 +92,8 @@ function generatePassword() {
   return password;
 }
 
-/* Function to add copy password to computer clipboard
-  - variable get user click input from password generator webpage
+/* Function to add copy password feature to computer clipboard
+  - variable to get user click input from password generator webpage
   - adds copy to clipboard function to the "Copy Password" button
   - sends an alert to the browser to notify user password was copied
 */
